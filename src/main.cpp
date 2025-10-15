@@ -4,6 +4,7 @@
 #include <sstream>
 #include <vector>
 #include "common.h"
+#include "satEncoder.h"
 
 int main(int argc, char* argv[]) {
     if (argc != 2) {
@@ -11,7 +12,9 @@ int main(int argc, char* argv[]) {
         return 1;
     }
 
-    std::ifstream inputFile(argv[1]);
+    std::string filename = std::string(argv[1]) + ".city";
+
+    std::ifstream inputFile(filename);
 
     if (!inputFile.is_open()) {
         std::cerr << "Error: Could not open file '" << argv[1] << "'" << std::endl;
@@ -77,6 +80,8 @@ int main(int argc, char* argv[]) {
             return 1;
         }
     }
+
+    inputFile.close();
 
     return 0;
 }
