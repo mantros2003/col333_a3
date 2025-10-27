@@ -194,11 +194,8 @@ void basicSATGen(int N, int M, int K, int J, const vector<MetroLine>& metroLines
             }
         }
         
-        cout << "adding turn constraints..." << endl;
-        cout << clauses.size() << endl;
         if (!all_turn_vars_for_k.empty()) {
             vector<int> p(all_turn_vars_for_k.size(), 0);
-            long long cnt = 0;
             if (J + 1 <= (int)p.size()) {
                 fill(p.begin(), p.begin() + J + 1, 1);
                 do {
@@ -207,12 +204,9 @@ void basicSATGen(int N, int M, int K, int J, const vector<MetroLine>& metroLines
                         if(p[i]) clause.push_back(-all_turn_vars_for_k[i]);
                     }
                     clauses.push_back(clause);
-                    cnt ++;
-                    if (cnt % 10000000 == 0) { cout << clauses.size() << endl; }
                 } while(prev_permutation(p.begin(), p.end()));
             }
         }
-        cout << "added turn constraints..." << endl;
     }
 
     // Popular cells must be occupied

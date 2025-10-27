@@ -1,6 +1,7 @@
 ## TODO
 - [ ] Implement Tseitin transformation
 - [ ] How to implement J constraint
+- [ ] Cardinality constraint improvement
 
 ## Implementation idea
 Two ideas:

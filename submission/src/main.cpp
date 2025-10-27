@@ -72,7 +72,6 @@ int main(int argc, char* argv[]) {
                 Point p;
                 if (ss >> p.x >> p.y) {
                     popularCells.push_back(p);
-                    std::cout << p.x << ' ' << p.y << std::endl;
                 } else {
                     std::cerr << "Error: Could not read all popular cell coordinates." << std::endl;
                     return 1;
